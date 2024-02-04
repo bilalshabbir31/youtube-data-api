@@ -12,6 +12,11 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mt-4">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
