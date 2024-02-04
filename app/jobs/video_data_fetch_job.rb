@@ -4,7 +4,7 @@ class VideoDataFetchJob < ApplicationJob
 
   def perform(video_id, channel_id)
     ya_client = youtube_service_credentials
-    response = ya_client.list_videos('snippet,contentDetails', id: video_id) 
+    response = ya_client.list_videos('snippet,contentDetails', id: video_id)
     video_hash = {
       yt_video_id: video_id,
       title: response.items.first.snippet.title,
@@ -12,7 +12,7 @@ class VideoDataFetchJob < ApplicationJob
       duration: response.items.first.content_details.duration,
       tags: response.items.first.snippet.tags,
       published_at: response.items.first.snippet.published_at,
-      channel_id: channel_id
+      channel_id:
     }
     Video.find_or_create_by(yt_video_id: video_id).update(video_hash)
   end
