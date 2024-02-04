@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'home/index'
   get 'home/fetch_channel_videos', to: 'home#fetch_channel_videos', as: 'fetch_channel_videos'
