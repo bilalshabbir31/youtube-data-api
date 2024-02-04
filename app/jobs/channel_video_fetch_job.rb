@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'google/apis/youtube_v3'
 class ChannelVideoFetchJob < ApplicationJob
   include YoutubeReportingCredentialsService
@@ -8,10 +10,10 @@ class ChannelVideoFetchJob < ApplicationJob
     channel_title = nil
     next_page_token = nil
     loop do
-      response = ya_client.list_searches('snippet', channel_id: yt_channel_id, max_results: 50, type: 'video', 
-                                        page_token: next_page_token)
+      response = ya_client.list_searches('snippet', channel_id: yt_channel_id, max_results: 50, type: 'video',
+                                                    page_token: next_page_token)
       channel_title = response.items.first.snippet.channel_title
-      response_ids = response.items.map { |item| item.id.video_id}.compact
+      response_ids = response.items.map { |item| item.id.video_id }.compact
       video_ids += response_ids
       next_page_token = response.next_page_token
       break if next_page_token.nil?
