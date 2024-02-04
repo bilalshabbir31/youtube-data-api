@@ -22,7 +22,7 @@ class ChannelVideoFetchJob < ApplicationJob
     channel.name = channel_title
     channel.save if channel.changed?
     video_ids.each do |video_id|
-      VideoDataFetchJob.perform_now(video_id, channel.id)
+      VideoDataFetchJob.perform_later(video_id, channel.id)
     end
   end
 end
