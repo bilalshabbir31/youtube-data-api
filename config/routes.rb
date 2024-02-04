@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
+require 'sidekiq/web'
 Rails.application.routes.draw do
+  mount Sidekiq::Web, at: '/sidekiq'
   get 'home/index'
   get 'home/fetch_channel_videos', to: 'home#fetch_channel_videos', as: 'fetch_channel_videos'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
