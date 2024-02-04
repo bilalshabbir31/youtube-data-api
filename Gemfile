@@ -76,3 +76,5 @@ gem 'google-apis-youtube_v3', '~> 0.36.0'
 gem 'dotenv-rails', '~> 2.8'
 
 gem 'rubocop', require: false
+
+gem 'sidekiq', '~> 7.2'
