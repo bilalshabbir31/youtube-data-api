@@ -1,0 +1,7 @@
+<div>
+  <h1 class="font-bold text-4xl mb-4">Youtube Data V3 API</h1>
+  <%= form_with url: fetch_channel_videos_path, method: :get do |form| %>
+    <%= form.text_field :yt_channel_id, placeholder: "Enter Channel Id" %>
+    <%= form.submit "Fetch Data", class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <% end %>
+</div>
