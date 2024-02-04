@@ -70,3 +70,5 @@ group :test do
 end
 
 gem "google-apis-youtube_v3", "~> 0.36.0"
+
+gem "dotenv-rails", "~> 2.8"

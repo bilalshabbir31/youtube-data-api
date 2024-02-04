@@ -100,6 +100,10 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     declarative (0.0.20)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
@@ -314,6 +318,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  dotenv-rails (~> 2.8)
   google-apis-youtube_v3 (~> 0.36.0)
   importmap-rails
   jbuilder
