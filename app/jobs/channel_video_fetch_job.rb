@@ -21,8 +21,9 @@ class ChannelVideoFetchJob < ApplicationJob
     channel = Channel.find_or_initialize_by(yt_channel_id:)
     channel.name = channel_title
     channel.save if channel.changed?
-    video_ids.each do |video_id|
-      VideoDataFetchJob.perform_later(video_id, channel.id)
+    video_fetch_jobs = video_ids.map do |video_id|
+      VideoDataFetchJob.new(video_id, channel.id)
     end
+    ActiveJob.perform_all_later(video_fetch_jobs)
   end
 end
