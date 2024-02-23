@@ -74,7 +74,7 @@ end
 
 gem 'google-apis-youtube_v3', '~> 0.37.0'
 
-gem 'dotenv-rails', '~> 2.8'
+gem 'dotenv-rails', '~> 3.0'
 
 gem 'rubocop', require: false
 
