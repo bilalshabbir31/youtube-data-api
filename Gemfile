@@ -72,7 +72,7 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'google-apis-youtube_v3', '~> 0.36.0'
+gem 'google-apis-youtube_v3', '~> 0.37.0'
 
 gem 'dotenv-rails', '~> 2.8'
 
