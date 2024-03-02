@@ -13,6 +13,12 @@ Metrics/BlockLength:
 Style/RedundantFetchBlock:
   Exclude:
     - config/puma.rb
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - app/jobs/channel_video_fetch_job.rb
+Metrics/PerceivedComplexity:
+  Exclude:
+    - app/jobs/channel_video_fetch_job.rb
 Style/Documentation:
   Enabled: false
 
