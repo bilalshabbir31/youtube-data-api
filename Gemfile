@@ -11,7 +11,7 @@ gem 'rails', '~> 7.1.3'
 gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
+gem 'pg', '~> 1.5'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
@@ -72,9 +72,9 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'google-apis-youtube_v3', '~> 0.38.0'
+gem 'google-apis-youtube_v3', '~> 0.40.0'
 
-gem 'dotenv-rails', '~> 3.0'
+gem 'dotenv-rails', '~> 3.1'
 
 gem 'rubocop', require: false
 
