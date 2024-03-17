@@ -11,5 +11,5 @@
 #  updated_at    :datetime         not null
 #
 class Channel < ApplicationRecord
-  has_many :videos
+  has_many :videos, dependent: :destroy
 end
