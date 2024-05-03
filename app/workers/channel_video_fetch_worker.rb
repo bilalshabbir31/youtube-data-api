@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 require 'google/apis/youtube_v3'
-class ChannelVideoFetchJob < ApplicationJob
+class ChannelVideoFetchWorker
+  include Sidekiq::Worker
   include YoutubeReportingCredentialsService
 
   def perform(yt_channel_id)
@@ -32,9 +33,7 @@ class ChannelVideoFetchJob < ApplicationJob
     end
 
     def enqueue_videos(video_ids, channel_id)
-      video_fetch_jobs = video_ids.map do |video_id|
-        VideoDataFetchJob.new(video_id, channel_id)
-      end
-      ActiveJob.perform_all_later(video_fetch_jobs)
+      array_of_args = video_ids.map { |id| [id, channel_id] }
+      Sidekiq::Client.push_bulk('class' => VideoDataFetchWorker, 'args' => array_of_args)
     end
 end
