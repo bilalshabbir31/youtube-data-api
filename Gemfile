@@ -20,6 +20,7 @@ group :development, :test do
   gem 'annotate', '~> 3.2'
   gem 'debug', platforms: %i[mri windows]
   gem 'pry'
+  gem 'rubocop', require: false
 end
 
 group :development do
@@ -35,6 +36,5 @@ gem 'google-apis-youtube_v3', '~> 0.41.0'
 
 gem 'dotenv-rails', '~> 3.1'
 
-gem 'rubocop', require: false
 
 gem 'sidekiq', '~> 7.2'
