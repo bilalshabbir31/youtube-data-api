@@ -32,7 +32,7 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'google-apis-youtube_v3', '~> 0.41.0'
+gem 'google-apis-youtube_v3', '~> 0.42.0'
 
 gem 'dotenv-rails', '~> 3.1'
 
