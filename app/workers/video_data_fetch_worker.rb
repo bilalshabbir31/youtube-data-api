@@ -17,7 +17,7 @@ class VideoDataFetchWorker
 
     def build_record(video_id, response, channel_id)
       items = response.items.first
-      statistics = items.statistics
+      statistics = items&.statistics
       {
         yt_video_id: video_id,
         title: items&.snippet&.title,
@@ -25,10 +25,10 @@ class VideoDataFetchWorker
         duration: items&.content_details&.duration,
         tags: items&.snippet&.tags,
         published_at: items&.snippet&.published_at,
-        comment_count: statistics.comment_count,
-        favorite_count: statistics.favorite_count,
-        like_count: statistics.like_count,
-        view_count: statistics.view_count,
+        comment_count: statistics&.comment_count,
+        favorite_count: statistics&.favorite_count,
+        like_count: statistics&.like_count,
+        view_count: statistics&.view_count,
         channel_id:
       }
     end
