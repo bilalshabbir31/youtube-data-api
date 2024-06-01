@@ -4,16 +4,20 @@
 #
 # Table name: videos
 #
-#  id           :bigint           not null, primary key
-#  description  :text
-#  duration     :string
-#  published_at :datetime
-#  tags         :text
-#  title        :text
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  channel_id   :bigint           not null
-#  yt_video_id  :string
+#  id             :bigint           not null, primary key
+#  comment_count  :bigint
+#  description    :text
+#  duration       :string
+#  favorite_count :bigint
+#  like_count     :bigint
+#  published_at   :datetime
+#  tags           :text
+#  title          :text
+#  view_count     :bigint
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  channel_id     :bigint           not null
+#  yt_video_id    :string
 #
 # Indexes
 #
