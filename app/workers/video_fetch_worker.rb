@@ -14,7 +14,7 @@ class VideoFetchWorker
 
   private
 
-    def fetch_channel_data(yt_channel_id) # rubocop:disable Metrics/PerceivedComplexity,Metrics/MethodLength,Metrics/CyclomaticComplexity
+    def fetch_channel_data(yt_channel_id) # rubocop:disable Metrics/MethodLength
       ya_client = youtube_service_credentials
       video_ids = []
       next_page_token = nil

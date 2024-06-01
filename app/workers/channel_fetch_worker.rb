@@ -5,7 +5,7 @@ require 'google/apis/youtube_v3'
 class ChannelFetchWorker
   include Sidekiq::Worker
   include YoutubeReportingCredentialsService
-  
+
   def perform(yt_channel_id)
     ya_client = youtube_service_credentials
     response = ya_client.list_channels('snippet,contentDetails,statistics, status', id: yt_channel_id)

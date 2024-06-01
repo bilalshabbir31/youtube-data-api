@@ -23,8 +23,8 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console'
   gem 'annotate', '~> 3.2'
+  gem 'web-console'
 end
 
 group :test do
