@@ -15,7 +15,7 @@ class ChannelFetchWorker
 
   private
 
-    def create_channel(response)
+    def create_channel(response) # rubocop:disable Metrics/PerceivedComplexity, Metrics/MethodLength, Metrics/CyclomaticComplexity
       items = response&.items&.first
       statistics = items&.statistics
       channel = Channel.find_or_initialize_by(yt_channel_id: items.id)
