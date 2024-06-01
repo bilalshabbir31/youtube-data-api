@@ -3,11 +3,11 @@
 class AddMetaDataToChannels < ActiveRecord::Migration[7.1]
   def change
     add_column :channels, :description, :string
-    add_column :channel, :custom_url, :string
-    add_column :channel, :published_at, :datetime
-    add_column :channel, :viewCount, :bigint
-    add_column :channel, :subscriberCount, :bigint
-    add_column :channel, :hiddenSubscriberCount, :boolean
-    add_column :channel, :videoCount, :bigint
+    add_column :channels, :custom_url, :string
+    add_column :channels, :published_at, :datetime
+    add_column :channels, :viewCount, :bigint
+    add_column :channels, :subscriberCount, :bigint
+    add_column :channels, :hiddenSubscriberCount, :boolean
+    add_column :channels, :videoCount, :bigint
   end
 end
