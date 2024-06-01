@@ -15,7 +15,7 @@ class VideoDataFetchWorker
 
   private
 
-    def build_record(video_id, response, channel_id) # rubocop:disable Metrics/CyclomaticComplexity, Metrics/MethodLength
+    def build_record(video_id, response, channel_id) # rubocop:disable Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity
       items = response&.items&.first
       statistics = items&.statistics
       {
