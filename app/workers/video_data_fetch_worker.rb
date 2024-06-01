@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'google/apis/youtube_v3'
+
 class VideoDataFetchWorker
   include Sidekiq::Worker
   include YoutubeReportingCredentialsService
@@ -15,13 +16,14 @@ class VideoDataFetchWorker
   private
 
     def build_record(video_id, response, channel_id)
+      items = response.items.first
       {
         yt_video_id: video_id,
-        title: response.items.first.snippet.title,
-        description: response.items.first.snippet.description,
-        duration: response.items.first.content_details.duration,
-        tags: response.items.first.snippet.tags,
-        published_at: response.items.first.snippet.published_at,
+        title: items&.snippet&.title,
+        description: items&.snippet&.description,
+        duration: items&.content_details&.duration,
+        tags: items&.snippet&.tags,
+        published_at: items&.snippet&.published_at,
         channel_id:
       }
     end

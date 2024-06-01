@@ -3,12 +3,9 @@ AllCops:
     - "lib/**/*"
     - "bin/**/*"
     - vendor/**/*.rb
-Metrics/MethodLength:
-  Exclude:
-    - app/jobs/channel_video_fetch_job.rb
-    - app/jobs/video_data_fetch_job.rb
 Metrics/BlockLength:
   Exclude:
+    - db/schema.rb
     - config/environments/development.rb
 Style/RedundantFetchBlock:
   Exclude:
