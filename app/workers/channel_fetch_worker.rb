@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'google/apis/youtube_v3'
+
 class ChannelFetchWorker
   include Sidekiq::Worker
   include YoutubeReportingCredentialsService
