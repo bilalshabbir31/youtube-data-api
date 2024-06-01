@@ -16,7 +16,7 @@ class VideoDataFetchWorker
   private
 
     def build_record(video_id, response, channel_id) # rubocop:disable Metrics/CyclomaticComplexity, Metrics/MethodLength
-      items = response.items.first
+      items = response&.items&.first
       statistics = items&.statistics
       {
         yt_video_id: video_id,
