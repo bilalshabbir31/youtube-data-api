@@ -17,7 +17,6 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
-  gem 'annotate', '~> 3.2'
   gem 'debug', platforms: %i[mri windows]
   gem 'pry'
   gem 'rubocop', require: false
@@ -25,6 +24,7 @@ end
 
 group :development do
   gem 'web-console'
+  gem 'annotate', '~> 3.2'
 end
 
 group :test do
