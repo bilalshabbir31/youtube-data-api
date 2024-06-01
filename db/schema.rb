@@ -22,10 +22,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_01_073533) do
     t.string "description"
     t.string "custom_url"
     t.datetime "published_at"
-    t.bigint "viewCount"
-    t.bigint "subscriberCount"
-    t.boolean "hiddenSubscriberCount"
-    t.bigint "videoCount"
+    t.bigint "view_count"
+    t.bigint "subscriber_count"
+    t.boolean "hidden_subscriber_count"
+    t.bigint "video_count"
   end
 
   create_table "videos", force: :cascade do |t|
