@@ -7,7 +7,8 @@ class ChannelFetchWorker
   def perform(yt_channel_id)
     ya_client = youtube_service_credentials
     response = ya_client.list_channels('snippet,contentDetails,statistics, status', id: yt_channel_id)
-    create_channel(response)
+    channel = create_channel(response)
+    VideoFetchWorker.perform_async(channel.id)
   end
 
   private
@@ -25,5 +26,6 @@ class ChannelFetchWorker
       channel.video_count = statistics.video_count
       channel.view_count = statistics.view_count
       channel.save if channel.changed?
+      channel
     end
 end
