@@ -19,11 +19,11 @@ class VideoDataFetchWorker
       items = response.items.first
       {
         yt_video_id: video_id,
-        title: items.snippet.title,
-        description: items.snippet.description,
-        duration: items.content_details.duration,
-        tags: items.snippet.tags,
-        published_at: items.snippet.published_at,
+        title: items&.snippet&.title,
+        description: items&.snippet&.description,
+        duration: items&.content_details&.duration,
+        tags: items&.snippet&.tags,
+        published_at: items&.snippet&.published_at,
         channel_id:
       }
     end
