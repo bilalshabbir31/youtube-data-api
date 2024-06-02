@@ -17,13 +17,13 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
-  gem 'annotate', '~> 3.2'
   gem 'debug', platforms: %i[mri windows]
   gem 'pry'
   gem 'rubocop', require: false
 end
 
 group :development do
+  gem 'annotate', '~> 3.2'
   gem 'web-console'
 end
 
@@ -32,7 +32,7 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'google-apis-youtube_v3', '~> 0.41.0'
+gem 'google-apis-youtube_v3', '~> 0.42.0'
 
 gem 'dotenv-rails', '~> 3.1'
 

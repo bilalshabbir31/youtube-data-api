@@ -4,16 +4,28 @@
 #
 # Table name: videos
 #
-#  id           :bigint           not null, primary key
-#  yt_video_id  :string
-#  title        :text
-#  description  :text
-#  duration     :string
-#  tags         :text
-#  published_at :datetime
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  channel_id   :bigint           not null
+#  id             :bigint           not null, primary key
+#  comment_count  :bigint
+#  description    :text
+#  duration       :string
+#  favorite_count :bigint
+#  like_count     :bigint
+#  published_at   :datetime
+#  tags           :text
+#  title          :text
+#  view_count     :bigint
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  channel_id     :bigint           not null
+#  yt_video_id    :string
+#
+# Indexes
+#
+#  index_videos_on_channel_id  (channel_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (channel_id => channels.id)
 #
 require 'test_helper'
 
