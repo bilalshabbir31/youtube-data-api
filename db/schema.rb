@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_240_601_073_533) do
+ActiveRecord::Schema[7.1].define(version: 20_240_601_095_353) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -40,6 +40,10 @@ ActiveRecord::Schema[7.1].define(version: 20_240_601_073_533) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.bigint 'channel_id', null: false
+    t.bigint 'comment_count'
+    t.bigint 'favorite_count'
+    t.bigint 'like_count'
+    t.bigint 'view_count'
     t.index ['channel_id'], name: 'index_videos_on_channel_id'
   end
 
