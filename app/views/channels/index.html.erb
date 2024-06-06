@@ -1,0 +1,50 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <% content_for :title, "Channels" %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Channels</h1>
+    <%= link_to "New channel", home_index_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <div id="channels" class="min-w-full">
+    <table class="min-w-full bg-white">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="px-4 py-2">ID</th>
+          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2">Custom Url</th>
+          <th class="px-4 py-2">Subscriber Count</th>
+          <th class="px-4 py-2">Video Count</th>
+          <th class="px-4 py-2">View Count</th>
+          <th class="px-4 py-2">Published At</th>
+          <th class="px-4 py-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @channels.each do |channel| %>
+          <tr class="border-t">
+            <td class="px-4 py-2"><%= channel.id %></td>
+            <td class="px-4 py-2"><%= channel.name %></td>
+            <td class="px-4 py-2"><%= link_to channel.custom_url, "https://youtube.com/#{channel.custom_url}", target: "_blank", class: "text-blue-500 underline" %></td>
+            <td class="px-4 py-2"><%= channel.subscriber_count %></td>
+            <td class="px-4 py-2"><%= channel.video_count %></td>
+            <td class="px-4 py-2"><%= channel.view_count %></td>
+            <td class="px-4 py-2"><%= channel.published_at %></td>
+            <td class="px-4 py-2">
+              <%= link_to "Show", channel, class: "ml-2 rounded-lg py-2 px-4 bg-gray-200 inline-block font-medium" %>
+              <%= link_to "Delete", channel_path(channel), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }, class: "ml-2 rounded-lg py-2 px-4 bg-red-200 inline-block font-medium" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
