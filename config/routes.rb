@@ -3,14 +3,15 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
   mount Sidekiq::Web, at: '/sidekiq'
-  get 'home/index'
-  get 'home/fetch_channel_videos', to: 'home#fetch_channel_videos', as: 'fetch_channel_videos'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get 'up' => 'rails/health#show', as: :rails_health_check
 
+  resources :channels, except: %i[new edit create update]
+
+  resources :home, only: :index do
+    collection do
+      get 'fetch_channel_videos', to: 'home#fetch_channel_videos', as: 'fetch_channel_videos'
+    end
+  end
   # Defines the root path route ("/")
-  root 'home#index'
+  root 'channels#index'
 end
