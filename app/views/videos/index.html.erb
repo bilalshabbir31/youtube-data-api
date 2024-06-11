@@ -1,0 +1,49 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <% content_for :title, "Videos" %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl"><%= @videos.first.channel.name%></h1>
+    <%= link_to "Back", root_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <div id="videos" class="min-w-full">
+    <table class="min-w-full bg-white">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="px-4 py-2">ID</th>
+          <th class="px-4 py-2">Title</th>
+          <th class="px-4 py-2">Published At</th>
+          <th class="px-4 py-2">Comment Count</th>
+          <th class="px-4 py-2">Favorite Count</th>
+          <th class="px-4 py-2">View Count</th>
+          <th class="px-4 py-2">Like Count</th>
+          <th class="px-4 py-2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @videos.each do |video| %>
+          <tr id="<%= dom_id(video) %>" class="border-t">
+            <td class="px-4 py-2"><%= video.id %></td>
+            <td class="px-4 py-2"><%= video.title %></td>
+            <td class="px-4 py-2"><%= video.published_at %></td>
+            <td class="px-4 py-2"><%= video.comment_count %></td>
+            <td class="px-4 py-2"><%= video.favorite_count %></td>
+            <td class="px-4 py-2"><%= video.like_count %></td>
+            <td class="px-4 py-2"><%= video.view_count %></td>
+            <td class="px-4 py-2 flex space-x-2">
+              <%= link_to "Show", channel_video_path(video.channel_id, video.id), class: "ml-2 rounded-lg py-2 px-4 bg-gray-200 inline-block font-medium" %>
+              <%= link_to "Delete", video_path(id: video, channel_id: video.channel.id), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  }, class: "ml-2 rounded-lg py-2 px-4 bg-red-200 inline-block font-medium" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
