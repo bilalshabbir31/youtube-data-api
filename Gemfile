@@ -37,3 +37,5 @@ gem 'google-apis-youtube_v3', '~> 0.42.0'
 gem 'dotenv-rails', '~> 3.1'
 
 gem 'sidekiq', '~> 7.2'
+
+gem 'pagy', '~> 8.4'

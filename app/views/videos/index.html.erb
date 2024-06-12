@@ -45,5 +45,12 @@
         <% end %>
       </tbody>
     </table>
+    <% if @pagy.count > @pagy.items %>
+      <div class="text-center my-16">
+        <div class="inline-block">
+          <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
