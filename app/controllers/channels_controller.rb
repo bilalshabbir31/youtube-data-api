@@ -15,6 +15,7 @@ class ChannelsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to channels_url, notice: 'Channel was successfully destroyed.' }
       format.json { head :no_content }
+      format.turbo_stream
     end
   end
 
