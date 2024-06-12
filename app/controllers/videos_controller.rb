@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   before_action :set_video, only: %i[show destroy]
 
   def index
-    @videos = Video.where(channel_id: params[:channel_id])
+    @videos = Video.includes(:channel).where(channel: { id: params[:channel_id] })
   end
 
   def show; end
