@@ -1,8 +1,8 @@
 name: Rails tests
 on: [push]
 jobs:
-  rubocop:
-    name: RuboCop
+  lint:
+    name: All Linters
     runs-on: ubuntu-latest
 
     steps:
