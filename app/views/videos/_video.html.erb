@@ -19,14 +19,16 @@
           <p class="text-gray-700"><%= @video.duration %></p>
         </div>
 
-        <div class="mb-4">
-          <h3 class="text-lg font-semibold">Tags</h3>
-          <div class="flex flex-wrap gap-2">
-            <% JSON.parse(@video.tags).each do |tag| %>
-              <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"><%= tag %></span>
-            <% end %>
+        <% if @video.tags.present? %>
+          <div class="mb-4">
+            <h3 class="text-lg font-semibold">Tags</h3>
+            <div class="flex flex-wrap gap-2">
+              <% JSON.parse(@video.tags).each do |tag| %>
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded"><%= tag %></span>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
 
         <div class="mb-4">
           <h3 class="text-lg font-semibold">View Count</h3>
