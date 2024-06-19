@@ -26,7 +26,7 @@
       </thead>
       <tbody>
         <% @channels.each do |channel| %>
-          <tr id="<%= dom_id(channel)%>" class="border-t">
+          <tr id="<%= dom_id(channel) %>" class="border-t">
             <td class="px-4 py-2"><%= channel.id %></td>
             <td class="px-4 py-2"><%= channel.name %></td>
             <td class="px-4 py-2"><%= link_to channel.custom_url, "https://youtube.com/#{channel.custom_url}", target: "_blank", class: "text-blue-500 underline" %></td>

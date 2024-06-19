@@ -4,12 +4,16 @@ source 'https://rubygems.org'
 
 ruby '3.3.0'
 gem 'bootsnap', require: false
+gem 'dotenv-rails', '~> 3.1'
+gem 'google-apis-youtube_v3', '~> 0.42.0'
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'pagy', '~> 8.4'
 gem 'pg', '~> 1.5'
 gem 'puma', '>= 5.0'
 gem 'rails', '~> 7.1.3'
 gem 'redis', '>= 4.0.1'
+gem 'sidekiq', '~> 7.2'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'tailwindcss-rails'
@@ -24,6 +28,7 @@ end
 
 group :development do
   gem 'annotate', '~> 3.2'
+  gem 'erb_lint', require: false
   gem 'web-console'
 end
 
@@ -31,11 +36,3 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
-
-gem 'google-apis-youtube_v3', '~> 0.42.0'
-
-gem 'dotenv-rails', '~> 3.1'
-
-gem 'sidekiq', '~> 7.2'
-
-gem 'pagy', '~> 8.4'
