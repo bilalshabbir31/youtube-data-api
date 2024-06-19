@@ -35,7 +35,7 @@
             <td class="px-4 py-2"><%= channel.view_count %></td>
             <td class="px-4 py-2"><%= channel.published_at %></td>
             <td class="px-4 py-2">
-              <%= link_to "Videos", channel_videos_path(channel.id), class: "ml-2 rounded-lg py-2 px-4 bg-gray-200 inline-block font-medium" %>
+              <%= link_to "Videos", channel_videos_path(channel.id), data: { turbo_stream: true }, class: "ml-2 rounded-lg py-2 px-4 bg-gray-200 inline-block font-medium" %>
               <%= link_to "Show", channel, class: "ml-2 rounded-lg py-2 px-4 bg-gray-200 inline-block font-medium" %>
               <%= link_to "Delete", channel_path(channel), data: {
                     turbo_method: :delete,

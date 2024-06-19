@@ -1,6 +1,6 @@
 <div>
   <h1 class="font-bold text-4xl mb-4">Pull New Channel's Data</h1>
-  <%= form_with url: fetch_channel_videos_home_index_path, method: :get do |form| %>
+  <%= form_with url: fetch_channel_videos_home_index_path, data: {turbo_stream: true}, method: :get do |form| %>
     <%= form.text_field :yt_channel_id, placeholder: "Enter Channel Id" %>
     <%= form.submit "Fetch Data", class: "ml-2 rounded-lg py-3 px-5 bg-green-200 inline-block font-medium" %>
   <% end %>
