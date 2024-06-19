@@ -23,3 +23,5 @@ jobs:
 
       - name: Run RuboCop
         run: bundle exec rubocop
+      - name: Run Erb-lint
+        run: bundle exec erblint --lint-all
