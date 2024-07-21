@@ -45,7 +45,7 @@
         <% end %>
       </tbody>
     </table>
-    <% if @pagy.count > @pagy.items %>
+    <% if @pagy.count > @pagy.limit %>
       <div class="text-center my-16">
         <div class="inline-block">
           <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
