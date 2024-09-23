@@ -121,8 +121,9 @@ GEM
       rubocop (>= 1)
       smart_properties
     erubi (1.13.0)
-    faraday (2.11.0)
+    faraday (2.12.0)
       faraday-net_http (>= 2.0, < 3.4)
+      json
       logger
     faraday-net_http (3.3.0)
       net-http
@@ -136,7 +137,7 @@ GEM
       mutex_m
       representable (~> 3.0)
       retriable (>= 2.0, < 4.a)
-    google-apis-youtube_v3 (0.44.0)
+    google-apis-youtube_v3 (0.45.0)
       google-apis-core (>= 0.15.0, < 2.a)
     google-cloud-env (2.2.0)
       faraday (>= 1.0, < 3.a)
@@ -372,7 +373,7 @@ DEPENDENCIES
   debug
   dotenv-rails (~> 3.1)
   erb_lint
-  google-apis-youtube_v3 (~> 0.44.0)
+  google-apis-youtube_v3 (~> 0.45.0)
   importmap-rails
   jbuilder
   pagy (~> 9.0)
