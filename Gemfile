@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 ruby '3.3.0'
 gem 'bootsnap', require: false
 gem 'dotenv-rails', '~> 3.1'
-gem 'google-apis-youtube_v3', '~> 0.46.0'
+gem 'google-apis-youtube_v3', '~> 0.47.0'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pagy', '~> 9.1'
